@@ -121,30 +121,21 @@ export default function LoginPage() {
             </button>
 
             <div className="mt-6 border-t border-slate-200 pt-5 text-center">
-
   <p className="text-sm text-slate-500">
     Belum membuat permohonan?
   </p>
 
-  <a
+  <Link
     href="/apply"
     className="mt-3 inline-flex items-center justify-center rounded-xl border border-emerald-600 px-5 py-3 text-sm font-medium text-emerald-700 transition hover:bg-emerald-50"
   >
     Mohon Kemasukan Pelajar
-  </a>
+  </Link>
 
+  <p className="mt-5 text-center text-xs text-slate-400">
+    Portal ini untuk pentadbir dan kakitangan madrasah.
+  </p>
 </div>
-
-<Link
-  href="/apply"
-  className="mt-3 inline-flex items-center justify-center rounded-xl border border-emerald-600 px-5 py-3 text-sm font-medium text-emerald-700 transition hover:bg-emerald-50"
->
-  Mohon Kemasukan Pelajar
-</Link>
-
-<p className="mt-4 text-xs text-slate-400">
-  Portal ini untuk pentadbir dan kakitangan madrasah.
-</p>
 
           </form>
 
