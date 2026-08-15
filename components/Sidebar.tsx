@@ -18,9 +18,11 @@ import {
 
 type SidebarProps = {
   role: string;
+  mobile?: boolean;
+  onNavigate?: () => void;
 };
 
-export default function Sidebar({ role }: SidebarProps) {
+export default function Sidebar({ role, mobile = false, onNavigate,}: SidebarProps) {
   const pathname = usePathname();
 
   const menuItems = [
@@ -97,7 +99,11 @@ export default function Sidebar({ role }: SidebarProps) {
   );
 
   return (
-    <aside className="fixed left-0 top-0 h-screen w-64 bg-slate-950 text-white">
+    <aside className={
+    mobile
+      ? "h-full w-full bg-slate-950 text-white"
+      : "fixed left-0 top-0 h-screen w-64 bg-slate-950 text-white"
+        }>
       <div className="flex h-full flex-col">
 
         <div className="border-b border-slate-800 px-6 py-6">
@@ -136,6 +142,7 @@ export default function Sidebar({ role }: SidebarProps) {
                 <Link
                   key={item.href}
                   href={item.href}
+                  onClick={onNavigate}
                   className={`flex items-center gap-3 rounded-xl px-4 py-3 text-sm transition ${
                     active
                       ? "bg-emerald-600 text-white"

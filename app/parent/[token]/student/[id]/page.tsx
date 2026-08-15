@@ -141,11 +141,11 @@ export default async function ParentStudentPage({
 
       <header className="border-b border-slate-200 bg-white">
 
-        <div className="mx-auto max-w-5xl px-5 py-5">
+        <div className="mx-auto w-full max-w-5xl px-4 py-4 sm:px-6 sm:py-5">
 
           <Link
             href={`/parent/${token}`}
-            className="inline-flex items-center gap-2 text-sm text-slate-500"
+            className="inline-flex items-center gap-2 rounded-lg py-2 text-sm text-slate-500"
           >
             <ArrowLeft size={16} />
 
@@ -157,7 +157,7 @@ export default async function ParentStudentPage({
       </header>
 
 
-      <div className="mx-auto max-w-5xl space-y-7 px-5 py-8">
+      <div className="mx-auto w-full max-w-5xl space-y-6 px-4 py-6 sm:space-y-7 sm:px-6 sm:py-8">
 
 
         {/* STUDENT */}
@@ -170,7 +170,7 @@ export default async function ParentStudentPage({
             }
           </p>
 
-          <h1 className="mt-1 text-3xl font-bold text-slate-900">
+          <h1 className="mt-1 break-words text-2xl font-bold leading-tight text-slate-900 sm:text-3xl">
             {
               student.full_name
             }
@@ -188,7 +188,7 @@ export default async function ParentStudentPage({
 
         {/* SUMMARY */}
 
-        <div className="grid gap-4 md:grid-cols-3">
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
 
           <SummaryCard
             icon={BookOpen}
@@ -244,14 +244,14 @@ export default async function ParentStudentPage({
 
                   <div
                     key={index}
-                    className="rounded-xl border border-slate-200 p-4"
+                    className="rounded-xl border border-slate-200 p-3 sm:p-4"
                   >
 
-                    <div className="flex justify-between gap-4">
+                    <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
 
-                      <div>
+                      <div className="min-w-0 flex-1">
 
-                        <p className="font-medium text-slate-900">
+                        <p className="break-words font-medium leading-snug text-slate-900">
                           {
                             record.type ??
                             "Hafazan"
@@ -263,7 +263,7 @@ export default async function ParentStudentPage({
                         </p>
 
 
-                        <p className="mt-1 text-sm text-slate-500">
+                        <p className="mt-1 break-words text-sm leading-6 text-slate-500">
 
                           {record.surah ??
                             "-"}
@@ -278,9 +278,9 @@ export default async function ParentStudentPage({
                       </div>
 
 
-                      <div className="text-right">
+                      <div className="text-left sm:text-right">
 
-                        <p className="text-sm font-semibold text-emerald-700">
+                        <p className="text-sm font-semibold text-emerald-700 sm:whitespace-nowrap">
                           Gred{" "}
                           {
                             record.grade ??
@@ -328,7 +328,7 @@ export default async function ParentStudentPage({
           icon={ClipboardCheck}
         >
 
-          <div className="grid grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
 
             <Metric
               label="Attendance"
@@ -383,19 +383,19 @@ export default async function ParentStudentPage({
 
                   <div
                     key={index}
-                    className="flex items-center justify-between rounded-xl border border-slate-200 p-4"
+                    className="flex flex-col gap-3 rounded-xl border border-slate-200 p-3 sm:flex-row sm:items-center sm:justify-between sm:p-4"
                   >
 
-                    <div>
+                    <div className="min-w-0 flex-1">
 
-                      <p className="font-medium text-slate-900">
+                      <p className="break-words font-medium leading-snug text-slate-900">
                         {
                           result.subject ??
                           "Subject"
                         }
                       </p>
 
-                      <p className="mt-1 text-sm text-slate-500">
+                      <p className="mt-1 break-words text-sm leading-6 text-slate-500">
                         {
                           result.assessment
                         }
@@ -404,7 +404,7 @@ export default async function ParentStudentPage({
                     </div>
 
 
-                    <div className="text-right">
+                    <div className="text-left sm:text-right">
 
                       <p className="font-semibold text-slate-900">
 
@@ -486,19 +486,19 @@ export default async function ParentStudentPage({
 
                     <div
                       key={index}
-                      className="flex items-center justify-between rounded-xl border border-slate-200 p-4"
+                      className="flex flex-col gap-3 rounded-xl border border-slate-200 p-3 sm:flex-row sm:items-center sm:justify-between sm:p-4"
                     >
 
-                      <div>
+                      <div className="min-w-0 flex-1">
 
-                        <p className="font-medium text-slate-900">
+                        <p className="break-words font-medium leading-snug text-slate-900">
                           {
                             fee.description ||
                             fee.invoice_no
                           }
                         </p>
 
-                        <p className="mt-1 text-sm text-slate-500">
+                        <p className="mt-1 break-words text-sm leading-6 text-slate-500">
                           {
                             fee.invoice_no
                           }
@@ -507,9 +507,9 @@ export default async function ParentStudentPage({
                       </div>
 
 
-                      <div className="text-right">
+                      <div className="text-left sm:text-right">
 
-                        <p className="font-semibold text-slate-900">
+                        <p className="font-semibold text-slate-900 sm:whitespace-nowrap">
                           RM
                           {
                             balance.toFixed(
@@ -556,21 +556,21 @@ function SummaryCard({
 }) {
 
   return (
-    <div className="rounded-2xl border border-slate-200 bg-white p-5">
+    <div className="rounded-2xl border border-slate-200 bg-white p-4 sm:p-5">
 
-      <div className="flex items-center gap-4">
+      <div className="flex items-start gap-3 sm:gap-4">
 
-        <div className="rounded-xl bg-emerald-50 p-3 text-emerald-700">
+        <div className="shrink-0 rounded-xl bg-emerald-50 p-2.5 text-emerald-700 sm:p-3">
           <Icon size={20} />
         </div>
 
-        <div>
+        <div className="min-w-0 flex-1">
 
           <p className="text-xs text-slate-500">
             {label}
           </p>
 
-          <p className="mt-1 font-semibold text-slate-900">
+          <p className="mt-1 break-words font-semibold leading-snug text-slate-900">
             {value}
           </p>
 
@@ -596,20 +596,20 @@ function Section({
   return (
     <section className="rounded-2xl border border-slate-200 bg-white">
 
-      <div className="flex items-center gap-3 border-b border-slate-100 px-6 py-5">
+      <div className="flex items-center gap-3 border-b border-slate-100 px-4 py-4 sm:px-6 sm:py-5">
 
         <Icon
           size={20}
-          className="text-emerald-700"
+          className="shrink-0 text-emerald-700"
         />
 
-        <h2 className="font-semibold text-slate-900">
+        <h2 className="min-w-0 break-words font-semibold text-slate-900">
           {title}
         </h2>
 
       </div>
 
-      <div className="p-6">
+      <div className="p-4 sm:p-6">
         {children}
       </div>
 
@@ -627,13 +627,13 @@ function Metric({
 }) {
 
   return (
-    <div className="rounded-xl bg-slate-50 p-4 text-center">
+    <div className="rounded-xl bg-slate-50 p-3 text-center sm:p-4">
 
       <p className="text-xs text-slate-500">
         {label}
       </p>
 
-      <p className="mt-2 text-xl font-bold text-slate-900">
+      <p className="mt-2 break-words text-lg font-bold leading-tight text-slate-900 sm:text-xl">
         {value}
       </p>
 

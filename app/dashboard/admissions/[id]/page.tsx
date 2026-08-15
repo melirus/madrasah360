@@ -72,23 +72,23 @@ export default async function AdmissionDetailPage({
       </Link>
 
 
-      <div className="flex items-center justify-between">
+      <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
 
         <div>
 
-          <p className="text-sm font-medium text-emerald-700">
+          <p className="break-all text-sm font-medium text-emerald-700">
             {
               application.application_no
             }
           </p>
 
-          <h1 className="mt-2 text-3xl font-bold text-slate-900">
+          <h1 className="mt-1 break-words text-2xl font-bold leading-tight text-slate-900 sm:mt-2 sm:text-3xl">
             {
               application.applicant_name
             }
           </h1>
 
-          <p className="mt-2 text-slate-500">
+          <p className="mt-2 text-sm leading-6 text-slate-500 sm:text-base">
             Application Status:{" "}
             <span className="font-medium capitalize">
               {application.status}
@@ -100,7 +100,7 @@ export default async function AdmissionDetailPage({
       </div>
 
 
-      <div className="grid gap-6 xl:grid-cols-2">
+      <div className="grid grid-cols-1 gap-4 sm:gap-5 xl:grid-cols-2 xl:gap-6">
 
         <Section title="Student Information">
 
@@ -226,17 +226,17 @@ function Section({
 }) {
 
   return (
-    <section className="rounded-2xl border border-slate-200 bg-white">
+    <section className="w-full overflow-hidden rounded-2xl border border-slate-200 bg-white">
 
-      <div className="border-b border-slate-100 px-6 py-5">
+      <div className="border-b border-slate-100 px-4 py-4 sm:px-6 sm:py-5">
 
-        <h2 className="font-semibold text-slate-900">
+        <h2 className="break-words font-semibold leading-snug text-slate-900">
           {title}
         </h2>
 
       </div>
 
-      <div className="grid gap-6 p-6 md:grid-cols-2">
+      <div className="grid grid-cols-1 gap-4 p-4 sm:gap-5 sm:p-5 md:grid-cols-2 md:gap-6 md:p-6">
         {children}
       </div>
 
@@ -255,13 +255,13 @@ function Info({
 }) {
 
   return (
-    <div>
+    <div className="min-w-0">
 
-      <p className="text-xs uppercase tracking-wide text-slate-400">
+      <p className="break-words text-xs uppercase tracking-wide text-slate-400">
         {label}
       </p>
 
-      <p className="mt-2 text-sm font-medium text-slate-800">
+      <p className="mt-1.5 break-words text-sm font-medium leading-6 text-slate-800 sm:mt-2">
         {value || "-"}
       </p>
 

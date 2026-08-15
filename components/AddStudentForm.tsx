@@ -356,7 +356,7 @@ export default function AddStudentForm({
         icon={User}
       >
 
-        <div className="grid gap-5 md:grid-cols-2">
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-5">
 
           <Field
             label="Full Name"
@@ -769,7 +769,7 @@ export default function AddStudentForm({
       </Section>
 
 
-      <div className="flex justify-end gap-3">
+      <div className="flex flex-col-reverse gap-3 sm:flex-row sm:justify-end">
 
         <button
           type="button"
@@ -778,7 +778,7 @@ export default function AddStudentForm({
               "/dashboard/students"
             )
           }
-          className="rounded-xl border border-slate-200 bg-white px-5 py-3 text-sm font-medium text-slate-700"
+          className="inline-flex w-full items-center justify-center rounded-xl border border-slate-200 bg-white px-5 py-3 text-sm font-medium text-slate-700 transition hover:bg-slate-50 sm:w-auto"
         >
           Cancel
         </button>
@@ -787,7 +787,7 @@ export default function AddStudentForm({
         <button
           type="submit"
           disabled={loading}
-          className="inline-flex items-center gap-2 rounded-xl bg-emerald-700 px-6 py-3 text-sm font-medium text-white hover:bg-emerald-800 disabled:opacity-50"
+          className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-emerald-700 px-6 py-3 text-sm font-medium text-white transition hover:bg-emerald-800 disabled:cursor-not-allowed disabled:opacity-60 sm:w-auto"
         >
           <Save size={18} />
 
@@ -804,7 +804,7 @@ export default function AddStudentForm({
 
 
 const inputStyle =
-  "w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm outline-none focus:border-emerald-500 focus:ring-2 focus:ring-emerald-100";
+  "w-full min-w-0 rounded-xl border border-slate-200 bg-white px-3 py-3 text-sm outline-none focus:border-emerald-500 focus:ring-2 focus:ring-emerald-100 sm:px-4";
 
 
 function Field({
@@ -821,10 +821,10 @@ function Field({
   return (
     <div
       className={
-        wide ? "md:col-span-2" : ""
+       `min-w-0 ${wide ? "md:col-span-2" : ""}`
       }
     >
-      <label className="mb-2 block text-sm font-medium text-slate-700">
+      <label className="mb-2 block break-words text-sm font-medium leading-5 text-slate-700">
         {label}
 
         {required && (
@@ -854,18 +854,18 @@ function Section({
   return (
     <section className="rounded-2xl border border-slate-200 bg-white">
 
-      <div className="flex items-center gap-3 border-b border-slate-100 px-6 py-5">
+      <div className="flex items-start gap-3 border-b border-slate-100 px-4 py-4 sm:items-center sm:px-6 sm:py-5">
 
-        <div className="rounded-xl bg-emerald-50 p-2.5 text-emerald-700">
+        <div className="shrink-0 rounded-xl bg-emerald-50 p-2.5 text-emerald-700">
           <Icon size={20} />
         </div>
 
-        <div>
+        <div className="min-w-0 flex-1">
           <h2 className="font-semibold text-slate-900">
             {title}
           </h2>
 
-          <p className="mt-1 text-sm text-slate-500">
+          <p className="mt-1 break-words text-sm leading-6 text-slate-500">
             {description}
           </p>
         </div>
@@ -873,7 +873,7 @@ function Section({
       </div>
 
 
-      <div className="p-6">
+      <div className="p-4 sm:p-6">
         {children}
       </div>
 

@@ -261,6 +261,11 @@ export default function PublicApplicationForm() {
             {applicationNo}
           </p>
 
+          <p className="text-sm text-slate-500 mt-4">
+            Sila simpan nombor permohonan ini untuk rujukan.
+            Pihak madrasah akan menghubungi tuan/puan selepas semakan dibuat.
+          </p>
+
         </div>
 
       </div>
@@ -276,7 +281,7 @@ export default function PublicApplicationForm() {
     >
 
       {error && (
-        <div className="rounded-xl bg-red-50 p-4 text-sm text-red-700">
+        <div className="rounded-xl bg-red-50 p-4 text-sm text-red-700 px-4 py-4 sm:px-6 sm:py-5">
           {error}
         </div>
       )}
@@ -539,12 +544,12 @@ export default function PublicApplicationForm() {
       </FormSection>
 
 
-      <div className="flex justify-end">
+      <div className="mt-8 flex justify-center">
 
         <button
           type="submit"
           disabled={loading}
-          className="inline-flex items-center gap-2 rounded-xl bg-emerald-700 px-7 py-3.5 font-medium text-white hover:bg-emerald-800 disabled:opacity-50"
+          className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-emerald-700 px-6 py-3 font-medium text-white transition hover:bg-emerald-800 disabled:opacity-50 sm:w-auto"
         >
 
           <Send size={18} />
@@ -577,7 +582,7 @@ function FormSection({
   return (
     <section className="rounded-2xl border border-slate-200 bg-white">
 
-      <div className="border-b border-slate-100 px-6 py-5">
+      <div className="border-b border-slate-100 px-4 py-4 sm:px-6 sm:py-5">
 
         <h2 className="font-semibold text-slate-900">
           {title}
@@ -585,7 +590,7 @@ function FormSection({
 
       </div>
 
-      <div className="grid gap-5 p-6 md:grid-cols-2">
+      <div className="grid grid-cols-1 gap-4 px-4 py-5 sm:px-6 sm:py-6 md:grid-cols-2 md:gap-5">
         {children}
       </div>
 

@@ -38,7 +38,7 @@ export default function LoginPage() {
   }
 
   return (
-    <main className="min-h-screen bg-slate-100 flex items-center justify-center p-6">
+    <main className="min-h-screen px-4 py-8 sm:px-6 bg-slate-100 flex items-center justify-center p-6">
       <div className="w-full max-w-md">
 
         <div className="text-center mb-8">
@@ -48,17 +48,17 @@ export default function LoginPage() {
             </span>
           </div>
 
-          <h1 className="text-3xl font-bold text-slate-900">
+          <h1 className="text-2xl font-bold text-slate-900 sm:text-3xl">
             Madrasah360
           </h1>
 
-          <p className="text-slate-500 mt-2">
-            Madrasah Management System
+          <p className="mt-1 text-sm text-slate-500 sm:text-base">
+            Sistem Pengurusan Madrasah Bersepadu
           </p>
         </div>
 
 
-        <div className="bg-white rounded-2xl shadow-sm border border-slate-200 p-8">
+        <div className="bg-white rounded-2xl shadow-sm border border-slate-200 p-5 sm:p-8">
 
           <h2 className="text-xl font-semibold text-slate-900">
             Sign in
@@ -127,7 +127,7 @@ export default function LoginPage() {
 
   <Link
     href="/apply"
-    className="mt-3 inline-flex items-center justify-center rounded-xl border border-emerald-600 px-5 py-3 text-sm font-medium text-emerald-700 transition hover:bg-emerald-50"
+    className="mt-3 inline-flex w-full items-center justify-center rounded-xl border border-emerald-600 px-5 py-3 text-sm font-medium text-emerald-700 transition hover:bg-emerald-50 sm:w-auto"
   >
     Mohon Kemasukan Pelajar
   </Link>
@@ -142,7 +142,7 @@ export default function LoginPage() {
         </div>
 
         <p className="text-center text-xs text-slate-400 mt-6">
-          Madrasah360 Demo Platform
+          Pengurusan Madrasah • Lebih Tersusun • Lebih Mudah
         </p>
 
       </div>

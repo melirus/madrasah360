@@ -108,7 +108,7 @@ Madrasah MUTQAN`;
       type="button"
       onClick={send}
       disabled={loading}
-      className="inline-flex items-center gap-2 rounded-xl bg-emerald-600 px-4 py-2.5 text-sm font-medium text-white hover:bg-emerald-700 disabled:opacity-50"
+      className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-emerald-600 px-4 py-3 text-sm font-medium text-white transition hover:bg-emerald-700 disabled:cursor-not-allowed disabled:opacity-60"
     >
 
       <MessageCircle size={17} />

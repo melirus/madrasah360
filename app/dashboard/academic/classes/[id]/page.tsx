@@ -125,27 +125,27 @@ export default async function ClassProfilePage({
       </Link>
 
 
-      <div className="rounded-2xl border border-slate-200 bg-white p-7">
+      <div className="rounded-2xl border border-slate-200 bg-white p-4 sm:p-6 lg:p-7">
 
-        <p className="text-sm font-medium text-emerald-700">
+        <p className="break-words text-sm font-medium text-emerald-700">
           Academic Year{" "}
           {
             academicYearData?.name
           }
         </p>
 
-        <h1 className="mt-2 text-3xl font-bold text-slate-900">
+        <h1 className="mt-1 break-words text-2xl font-bold leading-tight text-slate-900 sm:mt-2 sm:text-3xl">
           {classInfo.name}
         </h1>
 
-        <p className="mt-2 text-slate-500">
+        <p className="mt-2 break-words text-sm text-slate-500 sm:text-base">
           {classInfo.level || ""}
         </p>
 
       </div>
 
 
-      <div className="grid gap-5 md:grid-cols-3">
+      <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-4 lg:grid-cols-3">
 
         <Stat
           icon={Users}
@@ -177,7 +177,7 @@ export default async function ClassProfilePage({
 
       <section className="rounded-2xl border border-slate-200 bg-white">
 
-        <div className="border-b border-slate-100 px-6 py-5">
+        <div className="border-b border-slate-100 px-4 py-4 sm:px-6 sm:py-5">
 
           <h2 className="font-semibold text-slate-900">
             Student Roster
@@ -214,24 +214,24 @@ export default async function ClassProfilePage({
                 <Link
                   key={student.id}
                   href={`/dashboard/students/${student.id}`}
-                  className="flex items-center justify-between px-6 py-5 hover:bg-slate-50"
+                  className="flex flex-col gap-3 px-4 py-4 hover:bg-slate-50 sm:flex-row sm:items-center sm:justify-between sm:px-6 sm:py-5"
                 >
 
-                  <div>
-                    <p className="font-medium text-slate-900">
+                  <div className="min-w-0 flex-1">
+                    <p className="break-words font-medium leading-snug text-slate-900">
                       {
                         student.full_name
                       }
                     </p>
 
-                    <p className="mt-1 text-sm text-slate-500">
+                    <p className="mt-1 break-words text-sm text-slate-500">
                       {
                         student.student_no
                       }
                     </p>
                   </div>
 
-                  <span className="text-sm text-slate-500">
+                  <span className="self-start rounded-full bg-slate-50 px-3 py-1 text-xs font-medium capitalize text-slate-600 sm:self-auto sm:bg-transparent sm:px-0 sm:py-0 sm:text-sm sm:font-normal">
                     {
                       student.gender ||
                       "-"
@@ -250,7 +250,7 @@ export default async function ClassProfilePage({
 
       <section className="rounded-2xl border border-slate-200 bg-white">
 
-        <div className="border-b border-slate-100 px-6 py-5">
+        <div className="border-b border-slate-100 px-4 py-4 sm:px-6 sm:py-5">
 
           <h2 className="font-semibold text-slate-900">
             Teaching Assignments
@@ -290,18 +290,18 @@ export default async function ClassProfilePage({
               return (
                 <div
                   key={`${teacher?.id}-${subject?.name}`}
-                  className="flex items-center justify-between px-6 py-5"
+                  className="flex flex-col gap-3 px-4 py-4 sm:flex-row sm:items-center sm:justify-between sm:px-6 sm:py-5"
                 >
 
                   <div>
-                    <p className="font-medium text-slate-900">
+                    <p className="break-words font-medium leading-snug text-slate-900">
                       {
                         teacher?.full_name ??
                         "Teacher"
                       }
                     </p>
 
-                    <p className="mt-1 text-sm text-slate-500">
+                    <p className="mt-1 break-words text-sm text-slate-500">
                       {
                         subject?.name ??
                         "General"
@@ -312,7 +312,7 @@ export default async function ClassProfilePage({
 
                   {assignment.is_class_teacher && (
 
-                    <span className="rounded-full bg-emerald-50 px-3 py-1 text-xs font-medium text-emerald-700">
+                    <span className="self-start shrink-0 rounded-full bg-emerald-50 px-3 py-1 text-xs font-medium text-emerald-700 sm:self-auto">
                       Class Teacher
                     </span>
 

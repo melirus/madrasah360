@@ -28,20 +28,20 @@ export default async function TeachersPage() {
   return (
     <div className="space-y-6">
 
-      <div className="flex items-center justify-between">
+      <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
         <div>
-          <h1 className="text-3xl font-bold text-slate-900">
+          <h1 className="text-2xl font-bold text-slate-900 sm:text-3xl">
             Teachers
           </h1>
 
-          <p className="mt-2 text-slate-500">
+          <p className="mt-1 text-sm leading-6 text-slate-500 sm:mt-2 sm:text-base">
             Manage teacher profiles and academic assignments.
           </p>
         </div>
 
         <Link
           href="/dashboard/teachers/new"
-          className="inline-flex items-center gap-2 rounded-xl bg-emerald-700 px-5 py-3 text-sm font-medium text-white hover:bg-emerald-800"
+          className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-emerald-700 px-5 py-3 text-sm font-medium text-white transition hover:bg-emerald-800 sm:w-auto"
         >
           <Plus size={18} />
           Add Teacher
@@ -50,7 +50,7 @@ export default async function TeachersPage() {
 
       <div className="overflow-hidden rounded-2xl border border-slate-200 bg-white">
 
-        <div className="border-b border-slate-100 px-6 py-5">
+        <div className="border-b border-slate-100 px-4 py-4 sm:px-6 sm:py-5">
           <h2 className="font-semibold text-slate-900">
             Teacher Directory
           </h2>
@@ -72,38 +72,38 @@ export default async function TeachersPage() {
             <Link
               key={teacher.id}
               href={`/dashboard/teachers/${teacher.id}`}
-              className="flex items-center justify-between px-6 py-5 hover:bg-slate-50"
+              className="flex flex-col gap-3 px-4 py-4 hover:bg-slate-50 sm:flex-row sm:items-center sm:justify-between sm:px-6 sm:py-5"
             >
-              <div className="flex items-center gap-4">
+              <div className="flex min-w-0 items-start gap-3 sm:items-center sm:gap-4">
 
-                <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-emerald-50 text-emerald-700">
+                <div className="flex h-11 shrink-0 w-11 items-center justify-center rounded-xl bg-emerald-50 text-emerald-700">
                   <UserRound size={20} />
                 </div>
 
-                <div>
-                  <p className="font-medium text-slate-900">
+                <div className="min-w-0 flex-1">
+                  <p className="break-words font-medium leading-snug text-slate-900">
                     {teacher.full_name}
                   </p>
 
-                  <p className="mt-1 text-sm text-slate-500">
+                  <p className="mt-1 break-words text-sm text-slate-500">
                     {teacher.staff_no || "No staff number"}
                   </p>
                 </div>
               </div>
 
-              <div className="flex items-center gap-5">
+              <div className="flex w-full items-center justify-between gap-3 pl-14 sm:w-auto sm:justify-end sm:pl-0">
 
-                <div className="text-right">
-                  <p className="text-sm text-slate-600">
+                <div className="min-w-0 flex-1 text-left sm:flex-none sm:text-right">
+                  <p className="break-words text-sm text-slate-600 sm:whitespace-nowrap">
                     {teacher.phone || "-"}
                   </p>
 
-                  <p className="mt-1 text-xs text-slate-400">
+                  <p className="mt-1 break-all text-xs text-slate-400 sm:whitespace-nowrap">
                     {teacher.email || ""}
                   </p>
                 </div>
 
-                <span className="rounded-full bg-emerald-50 px-3 py-1 text-xs font-medium capitalize text-emerald-700">
+                <span className="shrink-0 rounded-full bg-emerald-50 px-3 py-1 text-xs font-medium capitalize text-emerald-700">
                   {teacher.status}
                 </span>
               </div>

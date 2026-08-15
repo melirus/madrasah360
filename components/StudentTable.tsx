@@ -39,7 +39,7 @@ export default function StudentTable({
   return (
     <div className="rounded-2xl border border-slate-200 bg-white">
 
-      <div className="flex items-center justify-between border-b border-slate-100 p-5">
+      <div className="flex flex-col gap-4 border-b border-slate-100 p-4 sm:flex-row sm:items-center sm:justify-between sm:p-5">
 
         <div>
           <h2 className="font-semibold text-slate-900">
@@ -51,7 +51,7 @@ export default function StudentTable({
           </p>
         </div>
 
-        <div className="relative w-80">
+        <div className="relative w-full sm:w-80">
 
           <Search
             size={17}
@@ -69,8 +69,78 @@ export default function StudentTable({
 
       </div>
 
+      {/* MOBILE STUDENT LIST */}
+      <div className="divide-y divide-slate-100 md:hidden">
+        {filteredStudents.map((student) => (
+        <Link
+          key={student.id}
+          href={`/dashboard/students/${student.id}`}
+          className="block px-4 py-4 transition hover:bg-slate-50"
+        >
+        <div className="flex items-start gap-3">
 
-      <div className="overflow-x-auto">
+        <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-emerald-50 text-emerald-700">
+          <UserRound size={18} />
+        </div>
+
+        <div className="min-w-0 flex-1">
+
+          <div className="flex items-start justify-between gap-3">
+
+            <div className="min-w-0">
+              <p className="break-words font-medium leading-snug text-slate-900">
+                {student.full_name}
+              </p>
+
+              <p className="mt-1 text-xs text-slate-500">
+                {student.student_no ?? "-"}
+              </p>
+            </div>
+
+            <ChevronRight
+              size={17}
+              className="mt-1 shrink-0 text-slate-400"
+            />
+          </div>
+
+          <div className="mt-3 grid grid-cols-2 gap-x-4 gap-y-2">
+
+            <div>
+              <p className="text-xs text-slate-400">
+                Class
+              </p>
+
+              <p className="mt-0.5 break-words text-sm text-slate-600">
+                {student.class_name}
+              </p>
+            </div>
+
+            <div>
+              <p className="text-xs text-slate-400">
+                Gender
+              </p>
+
+              <p className="mt-0.5 text-sm capitalize text-slate-600">
+                {student.gender ?? "-"}
+              </p>
+            </div>
+
+          </div>
+
+          <div className="mt-3">
+            <span className="inline-flex rounded-full bg-emerald-50 px-3 py-1 text-xs font-medium capitalize text-emerald-700">
+              {student.status}
+            </span>
+          </div>
+
+        </div>
+      </div>
+    </Link>
+  ))}
+</div>
+
+      {/* DESKTOP */}
+      <div className="hidden overflow-x-auto md:block">
 
         <table className="w-full">
 
@@ -174,7 +244,7 @@ export default function StudentTable({
           </tbody>
 
         </table>
-
+    </div>
 
         {filteredStudents.length === 0 && (
 
@@ -184,7 +254,7 @@ export default function StudentTable({
 
         )}
 
-      </div>
+      
 
     </div>
   );

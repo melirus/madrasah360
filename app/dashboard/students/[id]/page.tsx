@@ -349,21 +349,21 @@ const academicYear =
       {/* STUDENT HEADER */}
       {/* ================================================= */}
 
-      <div className="rounded-2xl border border-slate-200 bg-white p-7">
+      <div className="rounded-2xl border border-slate-200 bg-white p-4 sm:p-6 lg:p-7">
 
-        <div className="flex items-start justify-between">
+        <div className="flex flex-col gap-5 sm:flex-row sm:items-start sm:justify-between">
 
-          <div className="flex items-center gap-5">
+          <div className="flex min-w-0 items-start gap-3 sm:items-center sm:gap-5">
 
-            <div className="flex h-20 w-20 items-center justify-center rounded-2xl bg-emerald-50 text-emerald-700">
-              <UserRound size={36} />
+            <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-emerald-50 text-emerald-700 sm:h-20 sm:w-20">
+              <UserRound className="h-7 w-7 sm:h-9 sm:w-9" />
             </div>
 
-            <div>
+            <div className="min-w-0 flex-1">
 
               <div className="flex items-center gap-3">
 
-                <h1 className="text-3xl font-bold text-slate-900">
+                <h1 className="break-words text-2xl font-bold leading-tight text-slate-900 sm:text-3xl">
                   {student.full_name}
                 </h1>
 
@@ -374,19 +374,19 @@ const academicYear =
               </div>
 
 
-              <div className="mt-2 flex flex-wrap gap-x-5 gap-y-2 text-sm text-slate-500">
+              <div className="mt-2 flex flex-wrap gap-x-3 gap-y-1.5 text-xs leading-5 text-slate-500 sm:gap-x-5 sm:gap-y-2 sm:text-sm">
 
-                <span>
+                <span className="break-words">
                   {student.student_no}
                 </span>
 
-                <span>
+                <span className="break-words">
                   {className ??
                     "Class not assigned"}
                 </span>
 
                 {academicYear && (
-                  <span>
+                  <span className="break-words">
                     Academic Year{" "}
                     {academicYear}
                   </span>
@@ -407,7 +407,7 @@ const academicYear =
       {/* KPI CARDS */}
       {/* ================================================= */}
 
-      <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
+      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-4 xl:gap-5">
 
         <SummaryCard
           icon={BookOpen}
@@ -460,7 +460,7 @@ const academicYear =
         icon={UserRound}
       >
 
-        <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+        <div className="grid grid-cols-1 gap-4 sm:gap-5 md:grid-cols-2 xl:grid-cols-4 xl:gap-6">
 
           <Info
             label="Student Number"
@@ -525,7 +525,7 @@ const academicYear =
         icon={School}
       >
 
-        <p className="text-sm leading-7 text-slate-700">
+        <p className="break-words text-sm leading-7 text-slate-700">
 
           {[
             student.address_line1,
@@ -592,16 +592,16 @@ const academicYear =
                 return (
                   <div
                     key={guardian.id}
-                    className="rounded-xl border border-slate-200 p-5"
+                    className="rounded-xl border border-slate-200 p-4 sm:p-5"
                   >
 
-                    <div className="flex items-start justify-between">
+                    <div className="flex flex-wrap items-start justify-between gap-2">
 
                       <div>
 
                         <div className="flex items-center gap-2">
 
-                          <h3 className="font-semibold text-slate-900">
+                          <h3 className="min-w-0 break-words font-semibold text-slate-900">
                             {
                               guardian.full_name
                             }
@@ -627,15 +627,16 @@ const academicYear =
                     </div>
 
 
-                    <div className="mt-5 space-y-3 text-sm">
+                    <div className="mt-4 space-y-3 text-sm sm:mt-5">
 
-                      <div className="flex items-center gap-2 text-slate-600">
+                      <div className="flex min-w-0 items-start gap-2 text-slate-600">
 
-                        <Phone size={16} />
+                        <Phone size={16} className="mt-0.5 shrink-0"/>
 
-                        {guardian.phone ||
+                        <span className="min-w-0 break-all">
+                          {guardian.phone ||
                           "-"}
-
+                        </span>
                       </div>
 
 
@@ -652,7 +653,7 @@ const academicYear =
 
 
 
-                    <div className="mt-5 flex flex-wrap gap-3">
+                    <div className="mt-4 flex flex-wrap gap-2 sm:mt-5 sm:gap-3">
 
   {whatsappUrl && (
 
@@ -660,7 +661,7 @@ const academicYear =
       href={whatsappUrl}
       target="_blank"
       rel="noopener noreferrer"
-      className="inline-flex items-center gap-2 rounded-xl border border-emerald-200 bg-white px-4 py-2.5 text-sm font-medium text-emerald-700 hover:bg-emerald-50"
+      className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-emerald-600 px-4 py-3 text-sm font-medium text-white hover:bg-emerald-700"
     >
       <MessageCircle size={17} />
 
@@ -714,11 +715,11 @@ const academicYear =
 >
 
   {/* FULL HAFAZAN PROGRESS BUTTON */}
-  <div className="mb-5 flex justify-end">
+  <div className="mb-4 flex sm:mb-5 sm:justify-end">
 
     <Link
       href={`/dashboard/hafazan/student/${student.id}`}
-      className="inline-flex items-center gap-2 rounded-xl border border-emerald-200 bg-white px-4 py-2.5 text-sm font-medium text-emerald-700 transition hover:bg-emerald-50"
+      className="inline-flex w-full items-center justify-center gap-2 rounded-xl border border-emerald-200 bg-white px-4 py-3 text-sm font-medium text-emerald-700 transition hover:bg-emerald-50 sm:w-auto sm:py-2.5"
     >
       <BookOpen size={16} />
 
@@ -736,7 +737,86 @@ const academicYear =
 
   ) : (
 
-    <div className="overflow-x-auto">
+    <>
+    {/* MOBILE HAFazan LIST */}
+    <div className="space-y-3 md:hidden">
+      {hafazanRecords.map((record: any) => {
+        const type =
+          Array.isArray(record.hafazan_types)
+            ? record.hafazan_types[0]
+            : record.hafazan_types;
+
+            return (
+          <div
+            key={record.id}
+            className="rounded-xl border border-slate-200 p-4"
+          >
+            <div className="flex items-start justify-between gap-3">
+
+              <div className="min-w-0 flex-1">
+                <p className="break-words font-semibold leading-snug text-slate-900">
+                    {record.surah
+                    ? `${record.surah}${
+                    record.ayat_from && record.ayat_to
+                    ? ` : ${record.ayat_from}-${record.ayat_to}`
+                    : ""
+                    }`
+                    : type?.name || "Hafazan"}
+                </p>
+
+                <p className="mt-1 text-xs text-slate-500">
+                    {type?.name || "Hafazan"}
+                    {record.record_date
+                      ? ` • ${record.record_date}`
+                    : ""}
+                </p>
+              </div>
+
+              <span className="shrink-0 rounded-full bg-emerald-50 px-3 py-1 text-xs font-semibold text-emerald-700">
+                {record.grade || "-"}
+              </span>
+
+            </div>
+
+            <div className="mt-4 grid grid-cols-2 gap-4">
+
+               <div>
+                  <p className="text-xs font-medium uppercase tracking-wide text-slate-400">
+                      Juzuk / Maqra&apos;
+                  </p>
+
+                  <p className="mt-1 break-words text-sm font-medium text-slate-800">
+                    {record.juzuk
+                      ? `Juzuk ${record.juzuk}`
+                      : "-"}
+                    {record.maqra
+                      ? ` / ${record.maqra}`
+                      : ""}
+                  </p>
+                </div>
+
+              <div>
+                <p className="text-xs font-medium uppercase tracking-wide text-slate-400">
+                  Istilah
+                </p>
+
+                <p className="mt-1 break-words text-sm font-medium text-slate-800">
+                    {type?.term || "-"}
+                </p>
+              </div>
+
+            </div>
+          </div>
+        );
+      })}
+    </div>
+
+
+
+
+    {/* DESKTOP HAFazan TABLE */}
+
+    <div className="hidden overflow-x-auto md:block">
 
 <table className="w-full">
 
@@ -813,12 +893,10 @@ const academicYear =
             <td className="py-4 text-sm text-slate-600">
 
               {record.juzuk
-                ? `Juzuk ${record.juzuk}`
-                : ""}
-
-              {record.maqra
-                ? ` / ${record.maqra}`
-                : ""}
+                ? `Juzuk ${record.juzuk}${record.maqra ? ` / ${record.maqra}` : ""}`
+                : record.maqra
+                ? record.maqra
+                : "-"}
 
             </td>
 
@@ -837,6 +915,8 @@ const academicYear =
 </table>
 
     </div>
+
+    </>
 
   )}
 
@@ -861,7 +941,7 @@ const academicYear =
 
         ) : (
 
-          <div className="grid gap-5 md:grid-cols-3">
+          <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-4 lg:grid-cols-3">
 
             <Metric
               label="Attendance Rate"
@@ -925,17 +1005,17 @@ const academicYear =
                 return (
                   <div
                     key={result.id}
-                    className="flex items-center justify-between rounded-xl border border-slate-200 px-5 py-4"
+                    className="flex flex-col gap-3 rounded-xl border border-slate-200 px-4 py-4 sm:flex-row sm:items-center sm:justify-between sm:px-5"
                   >
 
-                    <div>
+                    <div className="min-w-0 flex-1">
 
-                      <p className="font-medium text-slate-900">
+                      <p className="break-words font-medium leading-snug text-slate-900">
                         {subject?.name ??
                           "Subject"}
                       </p>
 
-                      <p className="mt-1 text-sm text-slate-500">
+                      <p className="mt-1 break-words text-sm leading-5 text-slate-500">
                         {assessment?.name ??
                           "Assessment"}
                       </p>
@@ -943,9 +1023,9 @@ const academicYear =
                     </div>
 
 
-<div className="text-right">
+<div className="text-left sm:text-right">
 
-  <p className="font-semibold text-slate-900">
+  <p className="text-sm font-semibold text-slate-900 sm:whitespace-nowrap">
     {result.mark ?? "-"}
 
     {assessment?.maximum_mark
@@ -957,7 +1037,7 @@ const academicYear =
   {result.mark !== null &&
    assessment?.maximum_mark && (
 
-    <p className="mt-1 text-xs text-slate-400">
+    <p className="mt-1 text-xs text-slate-400 sm:whitespace-nowrap">
       {(
         (
           Number(result.mark) /
@@ -973,9 +1053,8 @@ const academicYear =
   )}
 
 
-  <p className="mt-1 text-sm font-medium text-emerald-700">
-    Grade{" "}
-    {result.grade || "-"}
+  <p className="mt-1 text-sm font-medium text-emerald-700 sm:whitespace-nowrap">
+    Grade {result.grade || "-"}
   </p>
 
 </div>
@@ -1011,7 +1090,7 @@ const academicYear =
         ) : (
 
           <>
-            <div className="grid gap-5 md:grid-cols-3">
+            <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-4 lg:grid-cols-3">
 
               <Metric
                 label="Total Fees"
@@ -1042,19 +1121,19 @@ const academicYear =
 
                   <div
                     key={fee.id}
-                    className="flex items-center justify-between rounded-xl border border-slate-200 px-5 py-4"
+                    className="flex flex-col gap-3 rounded-xl border border-slate-200 px-4 py-4 sm:flex-row sm:items-center sm:justify-between sm:px-5"
                   >
 
-                    <div>
+                    <div className="min-w-0 flex-1">
 
-                      <p className="font-medium text-slate-900">
+                      <p className="break-words font-medium leading-snug text-slate-900">
                         {fee.description ||
                           fee.fee_categories
                             ?.name ||
                           "Student Fee"}
                       </p>
 
-                      <p className="mt-1 text-sm text-slate-500">
+                      <p className="mt-1 break-all text-sm text-slate-500">
                         {fee.invoice_no ||
                           "No invoice number"}
                       </p>
@@ -1062,16 +1141,16 @@ const academicYear =
                     </div>
 
 
-                    <div className="text-right">
+                    <div className="text-left sm:text-right">
 
-                      <p className="font-semibold text-slate-900">
+                      <p className="font-semibold text-slate-900 sm:whitespace-nowrap">
                         RM
                         {Number(
                           fee.amount
                         ).toFixed(2)}
                       </p>
 
-                      <span className="text-xs capitalize text-slate-500">
+                      <span className="mt-1 text-xs capitalize text-slate-500 sm:whitespace-nowrap">
                         {fee.status}
                       </span>
 
@@ -1179,24 +1258,24 @@ function SummaryCard({
   value: string;
 }) {
   return (
-    <div className="rounded-2xl border border-slate-200 bg-white p-5">
+    <div className="rounded-2xl border border-slate-200 bg-white p-4 sm:p-5">
 
-      <div className="flex items-center justify-between">
+      <div className="flex items-center justify-between gap-4">
 
-        <div>
+        <div className="min-w-0 flex-1">
 
           <p className="text-sm text-slate-500">
             {label}
           </p>
 
-          <p className="mt-2 text-2xl font-bold text-slate-900">
+          <p className="mt-1.5 break-words text-xl font-bold leading-tight text-slate-900 sm:mt-2 sm:text-2xl">
             {value}
           </p>
 
         </div>
 
 
-        <div className="rounded-xl bg-emerald-50 p-3 text-emerald-700">
+        <div className="shrink-0 rounded-xl bg-emerald-50 p-2.5 text-emerald-700 sm:p-3">
           <Icon size={21} />
         </div>
 
@@ -1219,21 +1298,21 @@ function ProfileSection({
   children: React.ReactNode;
 }) {
   return (
-    <section className="rounded-2xl border border-slate-200 bg-white">
+    <section className="w-full overflow-hidden rounded-2xl border border-slate-200 bg-white">
 
-      <div className="flex items-center gap-3 border-b border-slate-100 px-6 py-5">
+      <div className="flex items-start gap-3 border-b border-slate-100 px-4 py-4 sm:items-center sm:px-6 sm:py-5">
 
-        <div className="rounded-xl bg-slate-100 p-2.5 text-slate-600">
+        <div className="shrink-0 rounded-xl bg-slate-100 p-2.5 text-slate-600">
           <Icon size={20} />
         </div>
 
-        <div>
+        <div className="min-w-0 flex-1">
 
-          <h2 className="font-semibold text-slate-900">
+          <h2 className="break-words font-semibold leading-snug text-slate-900">
             {title}
           </h2>
 
-          <p className="mt-1 text-sm text-slate-500">
+          <p className="mt-1 break-words text-sm leading-6 text-slate-500">
             {description}
           </p>
 
@@ -1242,7 +1321,7 @@ function ProfileSection({
       </div>
 
 
-      <div className="p-6">
+      <div className="p-4 sm:p-6">
         {children}
       </div>
 
@@ -1263,13 +1342,13 @@ function Info({
     | undefined;
 }) {
   return (
-    <div>
+    <div className="min-w-0">
 
-      <p className="text-xs font-medium uppercase tracking-wide text-slate-400">
+      <p className="break-words text-xs font-medium uppercase tracking-wide text-slate-400">
         {label}
       </p>
 
-      <p className="mt-2 text-sm font-medium text-slate-800">
+      <p className="mt-1.5 break-words text-sm font-medium leading-6 text-slate-800 sm:mt-2">
         {value || "-"}
       </p>
 
@@ -1286,13 +1365,13 @@ function Metric({
   value: string;
 }) {
   return (
-    <div className="rounded-xl bg-slate-50 p-5">
+    <div className="min-w-0 rounded-xl bg-slate-50 p-4 sm:p-5">
 
-      <p className="text-sm text-slate-500">
+      <p className="break-words text-xs text-slate-500 sm:text-sm">
         {label}
       </p>
 
-      <p className="mt-2 text-2xl font-bold text-slate-900">
+      <p className="mt-1.5 break-words text-xl font-bold text-slate-900 sm:mt-2 sm:text-2xl">
         {value}
       </p>
 

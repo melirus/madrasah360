@@ -368,7 +368,7 @@ const attendanceRate =
 
 
   return (
-    <div className="space-y-8">
+    <div className="space-y-6 sm:space-y-8">
 
 
       {/* ===================================== */}
@@ -381,11 +381,11 @@ const attendanceRate =
           Madrasah Management System
         </p>
 
-        <h1 className="mt-1 text-3xl font-bold text-slate-900">
+        <h1 className="mt-1 text-2xl font-bold text-slate-900 sm:text-3xl">
           Dashboard
         </h1>
 
-        <p className="mt-2 text-slate-500">
+        <p className="mt-1 text-sm leading-6 text-slate-500 sm:mt-2 sm:text-base">
           Overview of madrasah operations.
         </p>
 
@@ -396,7 +396,7 @@ const attendanceRate =
       {/* MAIN KPI */}
       {/* ===================================== */}
 
-      <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
+      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-4 xl:gap-5">
 
         <KpiCard
           icon={Users}
@@ -446,14 +446,14 @@ const attendanceRate =
       {/* TODAY */}
       {/* ===================================== */}
 
-      <div className="grid gap-6 xl:grid-cols-2">
+      <div className="grid grid-cols-1 gap-4 sm:gap-6 xl:grid-cols-2">
 
 
         {/* ATTENDANCE */}
 
         <section className="rounded-2xl border border-slate-200 bg-white">
 
-          <div className="flex items-center justify-between border-b border-slate-100 px-6 py-5">
+          <div className="flex items-center justify-between gap-3 border-b border-slate-100 px-4 py-4 sm:px-6 sm:py-5">
 
             <div>
 
@@ -476,7 +476,7 @@ const attendanceRate =
           </div>
 
 
-<div className="grid grid-cols-2 gap-4 p-6 md:grid-cols-5">
+<div className="grid grid-cols-1 gap-3 p-4 sm:grid-cols-2 sm:gap-4 sm:p-5 lg:grid-cols-5 lg:p-6">
 
   <Metric
     label="Attendance"
@@ -510,11 +510,11 @@ const attendanceRate =
 </div>
 
 
-          <div className="border-t border-slate-100 px-6 py-4">
+          <div className="border-t border-slate-100 px-4 py-4 sm:px-6">
 
             <Link
               href="/dashboard/attendance"
-              className="inline-flex items-center gap-2 text-sm font-medium text-emerald-700"
+              className="inline-flex items-center gap-2 rounded-lg py-1 text-sm font-medium text-emerald-700"
             >
               Attendance module
               <ArrowRight size={15} />
@@ -529,7 +529,7 @@ const attendanceRate =
 
         <section className="rounded-2xl border border-slate-200 bg-white">
 
-          <div className="flex items-center justify-between border-b border-slate-100 px-6 py-5">
+          <div className="flex items-center justify-between gap-3 border-b border-slate-100 px-4 py-4 sm:px-6 sm:py-5">
 
             <div>
 
@@ -551,7 +551,7 @@ const attendanceRate =
           </div>
 
 
-          <div className="grid grid-cols-2 gap-4 p-6">
+          <div className="grid grid-cols-1 gap-3 p-4 sm:grid-cols-2 sm:gap-4 sm:p-5 lg:p-6">
 
             <Metric
               label="Students Recorded"
@@ -570,11 +570,11 @@ const attendanceRate =
           </div>
 
 
-          <div className="border-t border-slate-100 px-6 py-4">
+          <div className="border-t border-slate-100 px-4 py-4 sm:px-6">
 
             <Link
               href="/dashboard/hafazan"
-              className="inline-flex items-center gap-2 text-sm font-medium text-emerald-700"
+              className="inline-flex items-center gap-2 rounded-lg py-1 text-sm font-medium text-emerald-700"
             >
               Hafazan module
               <ArrowRight size={15} />
@@ -593,7 +593,7 @@ const attendanceRate =
 
       <section className="rounded-2xl border border-slate-200 bg-white">
 
-        <div className="border-b border-slate-100 px-6 py-5">
+        <div className="border-b border-slate-100 px-4 py-4 sm:px-6 sm:py-5">
 
           <h2 className="font-semibold text-slate-900">
             Finance Overview
@@ -602,7 +602,7 @@ const attendanceRate =
         </div>
 
 
-        <div className="grid gap-5 p-6 md:grid-cols-3">
+        <div className="grid grid-cols-1 gap-3 p-4 sm:grid-cols-2 sm:gap-4 sm:p-5 lg:grid-cols-3 lg:p-6">
 
           <Metric
             label="Total Invoiced"
@@ -628,11 +628,11 @@ const attendanceRate =
         </div>
 
 
-        <div className="border-t border-slate-100 px-6 py-4">
+        <div className="border-t border-slate-100 px-4 py-4 sm:px-6">
 
           <Link
             href="/dashboard/finance"
-            className="inline-flex items-center gap-2 text-sm font-medium text-emerald-700"
+            className="inline-flex items-center gap-2 rounded-lg py-1 text-sm font-medium text-emerald-700"
           >
             View Finance
             <ArrowRight size={15} />
@@ -647,14 +647,14 @@ const attendanceRate =
       {/* RECENT DATA */}
       {/* ===================================== */}
 
-      <div className="grid gap-6 xl:grid-cols-2">
+      <div className="grid grid-cols-1 gap-4 sm:gap-6 xl:grid-cols-2">
 
 
         {/* APPLICATIONS */}
 
         <section className="rounded-2xl border border-slate-200 bg-white">
 
-          <div className="border-b border-slate-100 px-6 py-5">
+          <div className="border-b border-slate-100 px-4 py-4 sm:px-6 sm:py-5">
 
             <h2 className="font-semibold text-slate-900">
               Recent Applications
@@ -684,18 +684,18 @@ const attendanceRate =
                       application.id
                     }
                     href={`/dashboard/admissions/${application.id}`}
-                    className="flex items-center justify-between px-6 py-4 hover:bg-slate-50"
+                    className="flex flex-col gap-3 px-4 py-4 hover:bg-slate-50 sm:flex-row sm:items-center sm:justify-between sm:px-6"
                   >
 
-                    <div>
+                    <div className="min-w-0 flex-1">
 
-                      <p className="font-medium text-slate-900">
+                      <p className="break-words font-medium leading-snug text-slate-900">
                         {
                           application.applicant_name
                         }
                       </p>
 
-                      <p className="mt-1 text-xs text-slate-500">
+                      <p className="mt-1 break-words text-xs leading-5 text-slate-500">
                         {
                           application.application_no
                         }
@@ -731,7 +731,7 @@ const attendanceRate =
 
         <section className="rounded-2xl border border-slate-200 bg-white">
 
-          <div className="border-b border-slate-100 px-6 py-5">
+          <div className="border-b border-slate-100 px-4 py-4 sm:px-6 sm:py-5">
 
             <h2 className="font-semibold text-slate-900">
               Recent Hafazan
@@ -783,23 +783,24 @@ const attendanceRate =
                           ? `/dashboard/hafazan/student/${student.id}`
                           : "/dashboard/hafazan"
                       }
-                      className="flex items-center justify-between px-6 py-4 hover:bg-slate-50"
+                      className="flex flex-col gap-3 px-4 py-4 hover:bg-slate-50 sm:flex-row sm:items-center sm:justify-between sm:px-6"
                     >
 
-                      <div>
+                      <div className="min-w-0 flex-1">
 
-                        <p className="font-medium text-slate-900">
+                        <p className="break-words font-medium leading-snug text-slate-900">
                           {
                             student?.full_name ??
                             "Student"
                           }
                         </p>
 
-                        <p className="mt-1 text-xs text-slate-500">
+                        <p className="mt-1 break-words text-xs leading-5 text-slate-500">
                           {
                             type?.term ??
                             "Hafazan"
                           }
+
 
                           {record.surah
                             ? ` · ${record.surah}`
@@ -813,9 +814,9 @@ const attendanceRate =
                       </div>
 
 
-                      <div className="text-right">
+                      <div className="text-left sm:text-right">
 
-                        <p className="text-sm font-semibold text-emerald-700">
+                        <p className="text-sm font-semibold text-emerald-700 sm:whitespace-nowrap">
                           {
                             record.grade ??
                             "-"
@@ -867,10 +868,10 @@ function KpiCard({
   return (
     <Link
       href={href}
-      className="rounded-2xl border border-slate-200 bg-white p-6 transition hover:border-emerald-300 hover:shadow-sm"
+      className="rounded-2xl border border-slate-200 bg-white p-4 transition hover:border-emerald-300 hover:shadow-sm sm:p-5 xl:p-6"
     >
 
-      <div className="flex items-center justify-between">
+      <div className="flex items-center justify-between gap-4">
 
         <div>
 
@@ -878,13 +879,13 @@ function KpiCard({
             {title}
           </p>
 
-          <p className="mt-3 text-3xl font-bold text-slate-900">
+          <p className="mt-2 text-2xl font-bold text-slate-900 sm:mt-3 sm:text-3xl">
             {value}
           </p>
 
         </div>
 
-        <div className="rounded-xl bg-emerald-50 p-3 text-emerald-700">
+        <div className="shrink-0 rounded-xl bg-emerald-50 p-2.5 text-emerald-700 sm:p-3">
 
           <Icon size={22} />
 
@@ -906,13 +907,13 @@ function Metric({
 }) {
 
   return (
-    <div className="rounded-xl bg-slate-50 p-5">
+    <div className="rounded-xl bg-slate-50 p-3 sm:p-4 lg:p-5">
 
       <p className="text-xs text-slate-500">
         {label}
       </p>
 
-      <p className="mt-2 text-2xl font-bold text-slate-900">
+      <p className="mt-1.5 break-words text-xl font-bold leading-tight text-slate-900 sm:mt-2 sm:text-2xl">
         {value}
       </p>
 
@@ -958,7 +959,7 @@ function StatusBadge({
 
   return (
     <span
-      className={`rounded-full px-3 py-1 text-xs font-medium capitalize ${style}`}
+      className={`inline-flex whitespace-nowrap rounded-full px-3 py-1 text-xs font-medium capitalize ${style}`}
     >
       {status}
     </span>
@@ -973,7 +974,7 @@ function Empty({
 }) {
 
   return (
-    <div className="p-8 text-center text-sm text-slate-500">
+    <div className="px-4 py-6 text-center text-sm leading-6 text-slate-500 sm:p-8">
       {text}
     </div>
   );

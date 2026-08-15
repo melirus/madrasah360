@@ -55,18 +55,18 @@ export default async function AdmissionsPage() {
 
       <div>
 
-        <h1 className="text-3xl font-bold text-slate-900">
+        <h1 className="text-2xl font-bold text-slate-900 sm:text-3xl">
           Admissions
         </h1>
 
-        <p className="mt-2 text-slate-500">
+        <p className="mt-1 text-sm leading-6 text-slate-500 sm:mt-2 sm:text-base">
           Manage student applications and enrolment.
         </p>
 
       </div>
 
 
-      <div className="grid gap-5 md:grid-cols-3">
+      <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-4 lg:grid-cols-3">
 
         <StatCard
           title="Total Applications"
@@ -103,7 +103,7 @@ export default async function AdmissionsPage() {
 
       <div className="overflow-hidden rounded-2xl border border-slate-200 bg-white">
 
-        <div className="border-b border-slate-100 px-6 py-5">
+        <div className="border-b border-slate-100 px-4 py-4 sm:px-6 sm:py-5">
 
           <h2 className="font-semibold text-slate-900">
             Applications
@@ -129,12 +129,12 @@ export default async function AdmissionsPage() {
               <Link
                 key={application.id}
                 href={`/dashboard/admissions/${application.id}`}
-                className="flex items-center justify-between px-6 py-5 hover:bg-slate-50"
+                className="flex flex-col gap-3 px-4 py-4 hover:bg-slate-50 sm:flex-row sm:items-center sm:justify-between sm:px-6 sm:py-5"
               >
 
-                <div className="flex items-center gap-4">
+                <div className="flex min-w-0 items-start gap-3 sm:items-center sm:gap-4">
 
-                  <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-emerald-50 text-emerald-700">
+                  <div className="flex h-11 shrink-0 w-11 items-center justify-center rounded-xl bg-emerald-50 text-emerald-700">
 
                     <UserRound
                       size={20}
@@ -143,15 +143,15 @@ export default async function AdmissionsPage() {
                   </div>
 
 
-                  <div>
+                  <div className="min-w-0 flex-1">
 
-                    <p className="font-medium text-slate-900">
+                    <p className="break-words font-medium leading-snug text-slate-900">
                       {
                         application.applicant_name
                       }
                     </p>
 
-                    <p className="mt-1 text-sm text-slate-500">
+                    <p className="mt-1 break-words text-xs leading-5 text-slate-500">
                       {
                         application.application_no
                       }
@@ -167,7 +167,7 @@ export default async function AdmissionsPage() {
                 </div>
 
 
-                <div className="flex items-center gap-5">
+                <div className="flex shrink-0 items-center justify-between gap-3 sm:justify-end sm:gap-5">
 
                   <ApplicationStatus
                     status={
@@ -177,7 +177,7 @@ export default async function AdmissionsPage() {
 
                   <ChevronRight
                     size={18}
-                    className="text-slate-400"
+                    className="shrink-0 text-slate-400"
                   />
 
                 </div>
@@ -205,13 +205,13 @@ function StatCard({
 }) {
 
   return (
-    <div className="rounded-2xl border border-slate-200 bg-white p-6">
+    <div className="rounded-2xl border border-slate-200 bg-white p-4 sm:p-5 lg:p-6">
 
-      <p className="text-sm text-slate-500">
+      <p className="break-words text-sm text-slate-500">
         {title}
       </p>
 
-      <p className="mt-3 text-3xl font-bold text-slate-900">
+      <p className="mt-2 break-words text-2xl font-bold leading-tight text-slate-900 sm:mt-3 sm:text-3xl">
         {value}
       </p>
 

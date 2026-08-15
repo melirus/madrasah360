@@ -43,11 +43,11 @@ export default async function StudentsPage() {
   if (error) {
     return (
       <div>
-        <h1 className="text-3xl font-bold text-slate-900">
+        <h1 className="text-2xl font-bold text-slate-900 sm:text-3xl">
           Students
         </h1>
 
-        <p className="mt-4 text-red-600">
+        <p className="mt-3 break-words text-sm leading-6 text-red-600 sm:mt-4 sm:text-base">
           Failed to load students: {error.message}
         </p>
       </div>
@@ -85,14 +85,14 @@ export default async function StudentsPage() {
   return (
     <div className="space-y-6">
 
-      <div className="flex items-center justify-between">
+      <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
 
         <div>
-          <h1 className="text-3xl font-bold text-slate-900">
+          <h1 className="text-2xl font-bold text-slate-900 sm:text-3xl">
             Students
           </h1>
 
-          <p className="mt-2 text-slate-500">
+          <p className="mt-1 text-sm leading-6 text-slate-500 sm:mt-2 sm:text-base">
             Manage student records and enrolment.
           </p>
         </div>
@@ -100,7 +100,7 @@ export default async function StudentsPage() {
 
         <Link
           href="/dashboard/students/new"
-          className="inline-flex items-center gap-2 rounded-xl bg-emerald-700 px-5 py-3 text-sm font-medium text-white hover:bg-emerald-800"
+          className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-emerald-700 px-5 py-3 text-sm font-medium text-white transition hover:bg-emerald-800 sm:w-auto"
         >
           <Plus size={18} />
           Add Student

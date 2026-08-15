@@ -100,18 +100,18 @@ export default function TeacherAssignmentForm({
   }
 
   return (
-    <section className="rounded-2xl border border-slate-200 bg-white p-6">
+    <section className="rounded-2xl border border-slate-200 bg-white p-4 sm:p-5 lg:p-6">
 
       <h2 className="font-semibold text-slate-900">
         Add Teaching Assignment
       </h2>
 
-      <p className="mt-1 text-sm text-slate-500">
+      <p className="mt-1 text-sm leading-6 text-slate-500">
         Assign this teacher to a class and subject.
       </p>
 
 
-      <div className="mt-5 grid gap-4 md:grid-cols-3">
+      <div className="mt-4 grid grid-cols-1 gap-3 sm:mt-5 sm:gap-4 md:grid-cols-3">
 
         <select
           value={classId}
@@ -157,7 +157,7 @@ export default function TeacherAssignmentForm({
         </select>
 
 
-        <label className="flex items-center gap-3 rounded-xl border border-slate-200 px-4">
+        <label className="flex min-h-12 cursor-pointer items-center gap-3 rounded-xl border border-slate-200 px-4 py-3 md:col-span-3">
 
           <input
             type="checkbox"
@@ -169,7 +169,7 @@ export default function TeacherAssignmentForm({
             }
           />
 
-          <span className="text-sm text-slate-700">
+          <span className="whitespace-nowrap text-sm text-slate-700">
             Class Teacher
           </span>
 
@@ -179,7 +179,7 @@ export default function TeacherAssignmentForm({
 
 
       {error && (
-        <p className="mt-4 text-sm text-red-600">
+        <p className="mt-4 break-words text-sm leading-6 text-red-600">
           {error}
         </p>
       )}
@@ -189,7 +189,7 @@ export default function TeacherAssignmentForm({
         type="button"
         disabled={loading}
         onClick={addAssignment}
-        className="mt-5 inline-flex items-center gap-2 rounded-xl bg-emerald-700 px-5 py-3 text-sm font-medium text-white disabled:opacity-50"
+        className="mt-5 inline-flex w-full items-center justify-center gap-2 rounded-xl bg-emerald-700 px-5 py-3 text-sm font-medium text-white transition hover:bg-emerald-800 disabled:cursor-not-allowed disabled:opacity-50 sm:w-auto"
       >
         <Plus size={17} />
 
@@ -203,4 +203,4 @@ export default function TeacherAssignmentForm({
 }
 
 const inputStyle =
-  "rounded-xl border border-slate-200 px-4 py-3 text-sm outline-none focus:border-emerald-500";
+  "w-full min-w-0 rounded-xl border border-slate-200 bg-white px-3 py-3 text-sm outline-none focus:border-emerald-500 focus:ring-2 focus:ring-emerald-100 sm:px-4";

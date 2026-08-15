@@ -217,11 +217,11 @@ export default function AddTeacherForm() {
         </div>
       </div>
 
-      <div className="flex justify-end">
+      <div className="flex w-full justify-end">
         <button
           type="submit"
           disabled={loading}
-          className="inline-flex items-center gap-2 rounded-xl bg-emerald-700 px-6 py-3 text-sm font-medium text-white hover:bg-emerald-800 disabled:opacity-50"
+          className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-emerald-700 px-5 py-3 text-sm font-medium text-white transition hover:bg-emerald-800 disabled:cursor-not-allowed disabled:opacity-50 sm:w-auto"
         >
           <Save size={18} />
 

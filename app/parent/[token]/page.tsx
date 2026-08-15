@@ -38,11 +38,11 @@ export default async function ParentPortalPage({
     !data?.valid
   ) {
     return (
-      <main className="min-h-screen bg-slate-50 px-5 py-16">
+      <main className="min-h-screen bg-slate-50 px-4 py-8 sm:px-6 sm:py-16">
 
-        <div className="mx-auto max-w-lg rounded-2xl border border-red-200 bg-white p-8 text-center">
+        <div className="mx-auto w-full max-w-lg rounded-2xl border border-red-200 bg-white p-5 text-center sm:p-8">
 
-          <h1 className="text-xl font-bold text-slate-900">
+          <h1 className="text-lg font-bold text-slate-900 sm:text-xl">
             Link Tidak Sah
           </h1>
 
@@ -69,15 +69,15 @@ export default async function ParentPortalPage({
 
       <header className="border-b border-slate-200 bg-white">
 
-        <div className="mx-auto max-w-5xl px-5 py-6">
+        <div className="mx-auto w-full max-w-5xl px-4 py-4 sm:px-6 sm:py-6">
 
           <div className="flex items-center gap-3">
 
-            <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-emerald-700 font-bold text-white">
+            <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-emerald-700 font-bold text-white">
               M
             </div>
 
-            <div>
+            <div className="min-w-0">
               <p className="font-semibold text-slate-900">
                 Madrasah360
               </p>
@@ -94,7 +94,7 @@ export default async function ParentPortalPage({
       </header>
 
 
-      <div className="mx-auto max-w-5xl space-y-8 px-5 py-8">
+      <div className="mx-auto w-full max-w-5xl space-y-6 px-4 py-6 sm:space-y-8 sm:px-6 sm:py-8">
 
         <div>
 
@@ -102,7 +102,7 @@ export default async function ParentPortalPage({
             Assalamualaikum
           </p>
 
-          <h1 className="mt-1 text-2xl font-bold text-slate-900">
+          <h1 className="mt-1 text-xl font-bold text-slate-900 sm:text-2xl">
             {guardian?.name}
           </h1>
 
@@ -113,14 +113,14 @@ export default async function ParentPortalPage({
         </div>
 
 
-        <section>
+        <section className="space-y-4">
 
           <h2 className="font-semibold text-slate-900">
             Anak / Pelajar
           </h2>
 
 
-          <div className="mt-4 grid gap-5 md:grid-cols-2">
+          <div className="mt-4 grid grid-cols-1 gap-4 sm:gap-5 md:grid-cols-2">
 
             {students.map(
               (student: any) => (
@@ -128,32 +128,32 @@ export default async function ParentPortalPage({
                 <a
                   key={student.id}
                   href={`/parent/${token}/student/${student.id}`}
-                  className="rounded-2xl border border-slate-200 bg-white p-6 transition hover:border-emerald-300"
+                  className="rounded-2xl border border-slate-200 bg-white p-4 transition hover:border-emerald-300 sm:p-6"
                 >
 
-                  <div className="flex items-center gap-4">
+                  <div className="flex items-start gap-3 sm:gap-4">
 
-                    <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-emerald-50 text-emerald-700">
+                    <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-emerald-50 text-emerald-700 sm:h-12 sm:w-12">
                       <UserRound
                         size={22}
                       />
                     </div>
 
-                    <div>
+                    <div className="min-w-0 flex-1">
 
-                      <h3 className="font-semibold text-slate-900">
+                      <h3 className="break-words font-semibold leading-snug text-slate-900">
                         {
                           student.full_name
                         }
                       </h3>
 
-                      <p className="mt-1 text-sm text-slate-500">
+                      <p className="mt-1 break-words text-sm text-slate-500">
                         {
                           student.student_no
                         }
                       </p>
 
-                      <p className="mt-1 text-xs text-slate-400">
+                      <p className="mt-1 break-words text-xs text-slate-400">
                         {
                           student.relationship
                         }

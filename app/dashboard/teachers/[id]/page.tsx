@@ -72,20 +72,21 @@ export default async function TeacherProfilePage({
         Back to Teachers
       </Link>
 
-      <div className="rounded-2xl border border-slate-200 bg-white p-7">
+      <div className="rounded-2xl border border-slate-200 bg-white p-4 sm:p-6 lg:p-7">
 
-        <div className="flex items-center gap-5">
+        <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:gap-5">
 
-          <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-emerald-50 text-emerald-700">
-            <UserRound size={30} />
+          <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-emerald-50 text-emerald-700 sm:h-16 sm:w-16">
+            <UserRound size={28} className="sm:hidden" />
+            <UserRound size={30} className="hidden sm:block" />
           </div>
 
-          <div>
-            <p className="text-sm font-medium text-emerald-700">
+          <div className="min-w-0 flex-1">
+            <p className="break-all text-sm font-medium text-emerald-700">
               {teacher.staff_no}
             </p>
 
-            <h1 className="mt-1 text-3xl font-bold text-slate-900">
+            <h1 className="mt-1 break-words text-2xl font-bold leading-tight text-slate-900 sm:text-3xl">
               {teacher.full_name}
             </h1>
 
@@ -108,7 +109,7 @@ export default async function TeacherProfilePage({
 
       <section className="rounded-2xl border border-slate-200 bg-white">
 
-        <div className="border-b border-slate-100 px-6 py-5">
+        <div className="border-b border-slate-100 px-4 py-4 sm:px-6 sm:py-5">
 
           <h2 className="font-semibold text-slate-900">
             Current Assignments
@@ -120,7 +121,7 @@ export default async function TeacherProfilePage({
 
           {!teacher.teacher_assignments?.length && (
 
-            <div className="p-8 text-center text-sm text-slate-500">
+            <div className="p-6 text-center text-sm text-slate-500 sm:p-8">
               No assignments yet.
             </div>
 
@@ -147,19 +148,19 @@ export default async function TeacherProfilePage({
               return (
                 <div
                   key={assignment.id}
-                  className="flex items-center justify-between px-6 py-5"
+                  className="flex flex-col gap-3 px-4 py-4 sm:flex-row sm:items-center sm:justify-between sm:px-6 sm:py-5"
                 >
 
-                  <div className="flex items-center gap-4">
+                  <div className="flex min-w-0 items-start gap-3 sm:items-center sm:gap-4">
 
-                    <School className="text-emerald-600" />
+                    <School className="text-emerald-600 shrink-0" />
 
-                    <div>
-                      <p className="font-medium text-slate-900">
+                    <div className="min-w-0 flex-1">
+                      <p className="break-words font-medium leading-snug text-slate-900">
                         {classData?.name || "No class"}
                       </p>
 
-                      <p className="mt-1 text-sm text-slate-500">
+                      <p className="mt-1 break-words text-sm text-slate-500">
                         {subjectData?.name || "General"}
                       </p>
                     </div>
@@ -168,7 +169,7 @@ export default async function TeacherProfilePage({
 
                   {assignment.is_class_teacher && (
 
-                    <span className="rounded-full bg-emerald-50 px-3 py-1 text-xs font-medium text-emerald-700">
+                    <span className="self-start shrink-0 rounded-full bg-emerald-50 px-3 py-1 text-xs font-medium text-emerald-700 sm:self-auto">
                       Class Teacher
                     </span>
 
